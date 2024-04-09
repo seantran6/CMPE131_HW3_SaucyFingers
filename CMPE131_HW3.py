@@ -5,12 +5,13 @@ class User:
 
 class RecommendationAlgorithm:
     def generate_recommendations(self, user_goals):
-        # Placeholder for a sophisticated algorithm based on user goals
+        # Sophisticated algorithm placeholder based on user goals
         base_supplements = ["Whey Protein", "BCAAs"]
         if 'weight loss' in user_goals:
-            return base_supplements + ["Fat Burner"]
+            # Added weight loss specific supplements
+            return base_supplements + ["Fat Burner", "L-Carnitine", "Green Tea Extract"]
         elif 'muscle gain' in user_goals:
-            return base_supplements + ["Creatine", "Pre-Workout"]
+            return base_supplements + ["Creatine", "Pre-Workout", "Mass Gainer"]
         else:
             return base_supplements
 
@@ -38,6 +39,10 @@ class SupplementRecommenderSystem:
 if __name__ == "__main__":
     supplement_recommender_system = SupplementRecommenderSystem()
     
-    # Example usage
+    # Adding users with different fitness goals
     supplement_recommender_system.add_user("JohnDoe", ["muscle gain"])
+    supplement_recommender_system.add_user("JaneDoe", ["weight loss"])
+    
+    # Generating recommendations for both users
     supplement_recommender_system.recommend_for("JohnDoe")
+    supplement_recommender_system.recommend_for("JaneDoe")
